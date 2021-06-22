@@ -1,0 +1,19 @@
+{
+  "name": "gallerie",
+  "version": "1.0.0",
+  "description": "Media gallery tvOS app built with TVML",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bonesyblue/Gallerie.git"
+  },
+  "author": "Jonathan Bones",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bonesyblue/Gallerie/issues"
+  },
+  "homepage": "https://github.com/bonesyblue/Gallerie#readme"
+}
