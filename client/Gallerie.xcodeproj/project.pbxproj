@@ -15,7 +15,6 @@
 /* Begin PBXFileReference section */
 		7C7D8162268274830047D492 /* Gallerie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gallerie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C7D8165268274830047D492 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7C7D8167268274830047D492 /* application.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = application.js; sourceTree = "<group>"; };
 		7C7D8168268274840047D492 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C7D816B268274840047D492 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C7D816D268274840047D492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				7C7D8165268274830047D492 /* AppDelegate.swift */,
-				7C7D8167268274830047D492 /* application.js */,
 				7C7D8168268274840047D492 /* Assets.xcassets */,
 				7C7D816A268274840047D492 /* LaunchScreen.storyboard */,
 				7C7D816D268274840047D492 /* Info.plist */,
