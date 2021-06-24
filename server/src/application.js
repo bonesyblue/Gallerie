@@ -7,6 +7,8 @@
 //  Created by Jonathan Bones on 22.06.21.
 //
 
+import HomeTVML from'./pages/Home.tvml';
+
 /*
  * This file provides an example skeletal stub for the server-side implementation 
  * of a TVML application.
@@ -56,18 +58,13 @@ App.onDidBecomeActive = function() {
  * This convenience function returns an alert template, which can be used to present errors to the user.
  */
 var createAlert = function(title, description) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(HomeTVML, "application/xml");
+  const alertTemplate = doc.getElementsByTagName('alertTemplate').item(0);
 
-    var alertString = `<?xml version="1.0" encoding="UTF-8" ?>
-        <document>
-          <alertTemplate>
-            <title>${title}</title>
-            <description>${description}</description>
-          </alertTemplate>
-        </document>`
-
-    var parser = new DOMParser();
-
-    var alertDoc = parser.parseFromString(alertString, "application/xml");
-
-    return alertDoc
+  alertTemplate.dataItem = new DataItem();
+  alertTemplate.dataItem.setPropertyPath('title', title);
+  alertTemplate.dataItem.setPropertyPath('description', description);
+  
+  return doc
 }
