@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <document>
-    <alertTemplate>
-        <title binding="textContent:{title};"/>
-        <description binding="textContent:{description};"/>
-    </alertTemplate>
+    <head>
+        <style>
+            <!-- Video -->
+            .video {
+                border-radius: medium;
+                height: 180;
+                width: 320;
+            }
+            .videoOverlay {
+                padding: 8;
+                tv-align: right;
+                tv-position: bottom-right;
+            }
+            .overlayTitle {
+                font-size: 24;
+                font-weight: medium;
+            }
+        </style>
+    </head>
+    <stackTemplate>
+        <prototypes>
+            <lockup prototype="video" select="video" binding="@videoId:{videoId}; @videoUrl:{videoUrl};">
+                <img class="video" contentsMode="aspectFill" aspectRatio="1.778" binding="@src:{thumbnail};" />
+                <overlay>
+                    <title class="overlayTitle" binding="textContent:{title};"/>
+                </overlay>
+            </lockup>
+        </prototypes>
+        <!-- Banner -->
+        <banner>
+            <title>Galerie</title>
+        </banner>
+        <collectionList>
+            <!-- Popular Videos -->
+            <grid>
+                <section binding="children:{popularVideos}"/>
+            </grid>
+        </collectionList>
+
+    </stackTemplate>
 </document>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+   <loadingTemplate>
+      <activityIndicator>
+         <title binding="textContent:{title}" />
+      </activityIndicator>
+   </loadingTemplate>
+</document>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+    <alertTemplate>
+        <title binding="textContent:{title};"/>
+        <description binding="textContent:{description};"/>
+    </alertTemplate>
+</document>
