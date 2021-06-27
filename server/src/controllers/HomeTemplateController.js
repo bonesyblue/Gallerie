@@ -24,13 +24,13 @@ export default class HomeTemplateController {
         const videoId = item["id"];
         const videoUrl = item["video_files"].sort((a, b) => {
           if (a.width > b.width) {
-            return 1;
+            return -1;
           }
           if (a.width === b.width) {
             return 0;
           }
           if (a.width < b.width) {
-            return -1;
+            return 1;
           }
         })[0]["link"];
 
@@ -48,6 +48,8 @@ export default class HomeTemplateController {
       console.log("Videos:", data);
 
       const home = this.buildDocument();
+      home.addEventListener("select", this.handleSelectEvent);
+
       const stackTemplate = home.getElementsByTagName("stackTemplate").item(0);
       stackTemplate.dataItem = new DataItem();
       stackTemplate.dataItem.setPropertyPath("popularVideos", data);
@@ -58,5 +60,33 @@ export default class HomeTemplateController {
       const alert = AlertTemplateController("An error occurred");
       navigationDocument.replaceDocument(alert, loading);
     }
+  }
+
+  handleSelectEvent = (event) => {
+    const element = event.target;
+    const action = element.getAttribute("select");
+
+    switch (action) {
+      case "video":
+        const videoId = element.getAttribute("videoId");
+        const videoUrl = element.getAttribute("videoUrl");
+        const title = element.getAttribute("title");
+        this.playVideo(videoUrl, title);
+        break;
+      default:
+        console.warn(`Unhandled select event: ${action}.`);
+    }
+  };
+
+  playVideo(url, title) {
+    const item = new MediaItem("video", url);
+    item.title = title;
+
+    const mediaList = new Playlist();
+    mediaList.push(item);
+
+    const player = new Player();
+    player.playlist = mediaList;
+    player.play();
   }
 }

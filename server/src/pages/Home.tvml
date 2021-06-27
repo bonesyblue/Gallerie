@@ -21,7 +21,7 @@
     </head>
     <stackTemplate>
         <prototypes>
-            <lockup prototype="video" select="video" binding="@videoId:{videoId}; @videoUrl:{videoUrl};">
+            <lockup prototype="video" select="video" binding="@videoId:{videoId}; @videoUrl:{videoUrl}; @title:{title}">
                 <img class="video" contentsMode="aspectFill" aspectRatio="1.778" binding="@src:{thumbnail};" />
                 <overlay>
                     <title class="overlayTitle" binding="textContent:{title};"/>
